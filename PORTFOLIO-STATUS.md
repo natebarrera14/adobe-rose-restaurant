@@ -11,3 +11,5 @@ Source snapshot dated September 21, 2026. Original local development files are p
 A scan of selected text files found no matching common credential patterns or private workspace paths. Local dependencies, compiled output, and environment files are excluded from Git.
 
 No new full responsive/browser QA, live form submission, production launch, or business outcome is claimed. Historical QA notes remain development records.
+
+Large assets are stored through Git LFS without changing their bytes. Retrieve them with `git lfs pull` before running the build.

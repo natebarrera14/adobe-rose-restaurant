@@ -16,7 +16,11 @@ A restaurant website build using HTML, Tailwind CSS, JavaScript, and Vite. The c
 
 Use Node.js 20+ and npm from the repository root:
 
+Large media files use Git LFS. Install Git LFS, clone this repository, then run the following from the repository root to retrieve the original assets before building:
+
 ```bash
+git lfs install
+git lfs pull
 npm ci
 npm run dev
 ```
