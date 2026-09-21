@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Open+Sans:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-linen font-body text-ink antialiased; }
+  h1, h2, h3 { @apply font-display font-normal; }
+  a, button, input, select, textarea { @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-adobe; }
+  ::selection { @apply bg-adobe text-white; }
+}
+
+@layer components {
+  .site-shell { @apply mx-auto w-full max-w-site px-5 md:px-8 lg:px-16; }
+  .eyebrow { @apply text-[11px] font-bold uppercase tracking-[.18em] text-olive; }
+  .section-title { @apply mt-4 max-w-3xl text-[clamp(2.6rem,5vw,4.8rem)] leading-[.94] tracking-[-.02em]; }
+  .btn { @apply inline-flex min-h-11 items-center justify-center rounded px-5 py-3 text-sm font-bold transition duration-200; }
+  .btn-primary { @apply inline-flex min-h-11 items-center justify-center rounded bg-adobe px-5 py-3 text-sm font-bold text-white transition duration-200 hover:bg-adobe-dark; }
+  .btn-secondary { @apply inline-flex min-h-11 items-center justify-center rounded border border-charcoal bg-transparent px-5 py-3 text-sm font-bold text-charcoal transition duration-200 hover:bg-charcoal hover:text-linen; }
+  .card { @apply rounded-lg border border-mortar bg-white shadow-ambient; }
+  .field { @apply min-h-12 w-full rounded border border-mortar bg-white px-4 py-3 text-base text-ink placeholder:text-muted/70; }
+  .menu-tab { @apply min-h-11 shrink-0 rounded bg-white px-4 py-2 text-xs font-bold uppercase tracking-[.08em] text-muted transition hover:text-ink; }
+  .menu-tab[aria-selected='true'] { @apply bg-charcoal text-white; }
+  .menu-category-title { @apply mb-8 text-4xl md:text-5xl; }
+  .menu-grid { @apply grid gap-x-14 gap-y-7 lg:grid-cols-2; }
+  .menu-item { @apply border-b border-mortar pb-6; }
+  .menu-item-heading { @apply flex items-baseline gap-3; }
+  .menu-item-heading h4 { @apply font-display text-xl font-medium leading-7; }
+  .menu-item-heading h4 span { @apply mr-1 text-sm text-olive; }
+  .menu-item-heading strong { @apply ml-auto shrink-0 font-display text-lg font-medium; }
+  .menu-item p { @apply mt-2 text-sm leading-6 text-muted; }
+  .side-item { @apply rounded border border-mortar bg-white px-4 py-3 font-bold; }
+}
+
+.hero-scrim {
+  background: linear-gradient(90deg, rgba(27,28,26,.84) 0%, rgba(27,28,26,.58) 48%, rgba(27,28,26,.12) 100%);
+}
+
+.grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .13;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+}
+
+.menu-line { flex: 1; border-bottom: 1px dotted #C9C1B6; transform: translateY(-6px); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
